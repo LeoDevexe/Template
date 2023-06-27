@@ -1,0 +1,15 @@
+{
+    "name": "mysql/aplicacion",
+    "description": "Aplicacion con composer",
+    "autoload": {
+        "psr-4": {
+            "Mysql\\Aplicacion\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Leonardo"
+        }
+    ],
+    "require": {}
+}

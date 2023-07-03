@@ -3,7 +3,7 @@
     "description": "Aplicacion con composer",
     "autoload": {
         "psr-4": {
-            "Mysql\\Aplicacion\\": "src/"
+            "Mysql\\Aplicacion\\": "src/clases"
         }
     },
     "authors": [

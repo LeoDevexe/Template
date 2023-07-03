@@ -2,20 +2,58 @@
 
 namespace Mysql\Aplicacion\clases;
 
-class Usuario{
-    //Consultar todos los registros de usuario 
+class Usuario {
+    // Consultar todos los registros de usuario 
+    public static function mostrarUsuarios() {
+        $link = new Conexion;
+        $link = $link->conectar();
+        $sql = $link->query("SELECT * FROM users");
+        $row = $sql->fetch_all(MYSQLI_ASSOC);
+        $link->close(); // Cerrar la conexión antes de devolver el resultado
 
-    public static function mostrarUsuarios(){
+        return $row;
+    }
+
+    public static function agregarUsuarios($datos) {
+        $mail = $datos["mail"];
+        $password = $datos["pass"];
+        $nombre = $datos["nombre"];
+        $apellido = $datos["apellido"];
+        $fecha = date("Y-m-d h:i:s");
+        // Status
+        $link = new Conexion;
+        $link = $link->conectar();
+        $sql = $link->prepare("INSERT INTO users (user_email,user_password,user_nombre,user_apellido,fecha) VALUES (?,?,?,?,?)");
+        $sql->bind_param("sssss", $mail, $password, $nombre, $apellido, $fecha);
+        $sql->execute();
+
+        if ($sql) {
+            return "ok";
+        } else {
+            
+            return "error";
+        }
+        $link->close();
+    }
+
+public static function eliminarUsuarios($id) {
+
+    // Status
     $link = new Conexion;
     $link = $link->conectar();
-    $sql = $link->query("SELECT * FROM users");
-    $row = $sql->fetch_all(MYSQLI_ASSOC);
+    $sql = $link->prepare("DELETE FROM users (id = ?");
+    $sql->bind_param("i", $id);
 
-    return $row;
-    
+
+    if ($sql->execute()) {
+        return "ok";
+    } else {
+        
+        return "error";
+    }
     $link->close();
 }
 
-
-
 }
+//Consultar usuarios
+

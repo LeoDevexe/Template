@@ -12,7 +12,7 @@ $(".tablas").on("click", ".btnEliminar", function(){
     }).then(function(result) {
         if (result.isConfirmed) {
             $.ajax({
-                url: 'clases/ajax/eliminarUsuario.php',
+                url: 'ajax/eliminarUser.php',
                 data: {"id": id},
                 success: function(result) {
                     console.log(result);

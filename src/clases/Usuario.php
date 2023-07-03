@@ -36,24 +36,23 @@ class Usuario {
         $link->close();
     }
 
-public static function eliminarUsuarios($id) {
-
-    // Status
-    $link = new Conexion;
-    $link = $link->conectar();
-    $sql = $link->prepare("DELETE FROM users (id = ?");
-    $sql->bind_param("i", $id);
-
-
-    if ($sql->execute()) {
-        return "ok";
-    } else {
-        
-        return "error";
+    public static function eliminarUsuarios($id) {
+        // Establecer conexión
+        $link = new Conexion;
+        $link = $link->conectar();
+    
+        // Preparar y ejecutar la consulta
+        $sql = $link->prepare("DELETE FROM users WHERE id = ?");
+        $sql->bind_param("i", $id);
+    
+        if ($sql->execute()) {
+            $link->close(); // Cerrar la conexión
+            return "ok";
+        } else {
+            $link->close(); // Cerrar la conexión
+            return "error";
+        }
     }
-    $link->close();
-}
-
 }
 //Consultar usuarios
 

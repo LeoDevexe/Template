@@ -425,10 +425,9 @@
         </div>
     </div>
 
-    <?php include 'includes/scripts.php' ?>
+    <?php include './includes/footer.php' ?>
     <script src="js/demo/datatables-demo.js"></script>
     <script src="vendor/datatables/dataTables.bootstrap4.css"></script>
     <script src="vendor/datatables/jquery.dataTables.min.js"></script>
     <script src="js/eliminarUser.js"></script> 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-

@@ -44,15 +44,13 @@ class Usuario {
         // Preparar y ejecutar la consulta
         $sql = $link->prepare("DELETE FROM users WHERE id = ?");
         $sql->bind_param("i", $id);
-    
-        if ($sql->execute()) {
-            $link->close(); // Cerrar la conexión
+       
+        if ( $sql->execute()) {
             return "ok";
         } else {
-            $link->close(); // Cerrar la conexión
+            
             return "error";
         }
+        $link->close();
     }
 }
-//Consultar usuarios
-

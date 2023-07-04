@@ -1,14 +1,11 @@
 <?php
-   require "../../vendor2/autoload.php";
+    require "../../vendor2/autoload.php";
     use Mysql\Aplicacion\clases\Usuario;
 
 
+$id = $_POST["id"];
 
-$datos =[
-'id' => $_POST["id"],
-];
-
-$respuesta =  Usuario::eliminarUsuarios($datos);
+$respuesta =  Usuario::eliminarUsuarios($id);
 
 echo $respuesta;
 ?>

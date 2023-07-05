@@ -366,7 +366,7 @@
                                                 <td><?php echo $user["user_email"] ?></td>
                                                 <td><?php echo $user["fecha"] ?></td>
                                                 <td>
-                                                <button class="btn btn-primary">Editar</button>
+                                                <a href="./edit.php?id=<?php echo $user['id']?>" class="btn btn-primary">Editar</a>
                                                 <button class="btn btn-secondary btnEliminar" idUsuario="<?php echo $user['id'] ?>">Eliminar</button>
                                                 </td>
                                             </tr>
@@ -426,6 +426,7 @@
     </div>
 
     <?php include './includes/footer.php' ?>
+    
     <script src="js/demo/datatables-demo.js"></script>
     <script src="vendor/datatables/dataTables.bootstrap4.css"></script>
     <script src="vendor/datatables/jquery.dataTables.min.js"></script>

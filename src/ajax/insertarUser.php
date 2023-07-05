@@ -14,4 +14,5 @@ $datos =[
 $respuesta =  Usuario::agregarUsuarios($datos);
 
 echo $respuesta;
+
 ?>

@@ -13,7 +13,7 @@ $("#frmDatos").submit(function (e) {
         Swal.fire({
           icon: "error",
           title: "Error",
-          text: "Ya existe ese correo electronico",
+          text: 'Ya existe ese email',
         });
       }
       if (result == "ok") {
@@ -22,13 +22,16 @@ $("#frmDatos").submit(function (e) {
           title: "Exito...",
           text: "Se inserto el registro correctamente",
         });
-      } else {
+      }
+
+      if (result == "error") {
         Swal.fire({
           icon: "error",
-          title: "Oops...",
-          text: "Error, no se inserto el registro!",
+          title: "Error",
+          text: "No se inserto el email",
         });
       }
+
     },
   });
 });

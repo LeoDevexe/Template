@@ -12,3 +12,5 @@ CREATE TABLE users (
     user_apellido VARCHAR(30),
     fecha DATE
 ); 
+USE prueba_mysqli;
+SELECT * FROM users;

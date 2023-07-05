@@ -88,6 +88,7 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
+    <!-- <script src="js/Usuario.js"></script>  -->
     <script src="./vendor/jquery/jquery.min.js"></script>
     <script src="./vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
@@ -97,8 +98,12 @@
 
     <!-- Custom scripts for all pages-->
     <script src="./js/sb-admin-2.min.js"></script>
+<<<<<<< HEAD
     <script src="./js/insertarUser.js"> </script>
     <script src="./js/validarCorreo.js"> </script>
+=======
+     <script src="./js/insertarUser.js"> </script>
+>>>>>>> bf3f66b79f08f0796d65ad42f10ed075a3c4c19b
 
 </body>
 

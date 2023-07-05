@@ -114,4 +114,3 @@ class Usuario
         $link->close();
     }
 }
-

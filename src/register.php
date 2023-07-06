@@ -98,12 +98,8 @@
 
     <!-- Custom scripts for all pages-->
     <script src="./js/sb-admin-2.min.js"></script>
-<<<<<<< HEAD
     <script src="./js/insertarUser.js"> </script>
-    <script src="./js/validarCorreo.js"> </script>
-=======
-     <script src="./js/insertarUser.js"> </script>
->>>>>>> bf3f66b79f08f0796d65ad42f10ed075a3c4c19b
+    <!-- <script src="./js/validarCorreo.js"> </script> -->
 
 </body>
 

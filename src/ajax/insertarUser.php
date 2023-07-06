@@ -5,7 +5,7 @@
 
 
 $datos =[
-'mail' => $_POST["email"],
+'email' => $_POST["email"],
 'pass' =>  $_POST["password"],
 'nombre'=> $_POST["nombre"],
 'apellido' => $_POST["apellido"],

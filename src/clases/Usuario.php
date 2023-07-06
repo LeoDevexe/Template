@@ -17,34 +17,35 @@ class Usuario
     }
 
     public static function agregarUsuarios($datos)
-    {
-        $mail = $datos["mail"];
-        $password = $datos["pass"];
-        $nombre = $datos["nombre"];
-        $apellido = $datos["apellido"];
-        $fecha = date("Y-m-d h:i:s");
+{
+    $mail = $datos["email"]; // Corregir la clave "mail" a "email"
+    $password = $datos["pass"];
+    $nombre = $datos["nombre"];
+    $apellido = $datos["apellido"];
+    $fecha = date("Y-m-d h:i:s");
 
-        //Comprobar email repetido
-        $hayEmailRepetido = Usuario::validarCorreo($mail);
+    // Comprobar email repetido
+    $hayEmailRepetido = Usuario::validarCorreo($mail);
 
-        if(!($hayEmailRepetido)){
-            $link = new Conexion;
-            $link = $link->conectar();
-            $sql = $link->prepare("INSERT INTO users (user_email,user_password,user_nombre,user_apellido,fecha) VALUES (?,?,?,?,?)");
-            $sql->bind_param("sssss", $mail, $password, $nombre, $apellido, $fecha);
-            $sql->execute();
-        }else{
-            return 'Ya existe ese correo electronico registrado';
-        }
-        
-        // Status
-        if ($sql) {
-            return "ok";
-        } else {
-            return "error";
-        }
-        $link->close();
+    if (!$hayEmailRepetido) {
+        $link = new Conexion;
+        $link = $link->conectar();
+        $sql = $link->prepare("INSERT INTO users (user_email, user_password, user_nombre, user_apellido, fecha) VALUES (?, ?, ?, ?, ?)");
+        $sql->bind_param("sssss", $mail, $password, $nombre, $apellido, $fecha);
+        $sql->execute();
+    } else {
+        return 'Ya existe ese correo electrónico registrado';
     }
+
+    // Status
+    if ($sql) {
+        return "ok";
+    } else {
+        return "error";
+    }
+    $link->close();
+}
+
 
     public static function eliminarUsuarios($id)
     {
@@ -106,7 +107,7 @@ class Usuario
         $result = $link->query($sql);
 
         if ($result->num_rows > 0) {
-            return true;
+            return "existe";
         } else {
             return false;
         }

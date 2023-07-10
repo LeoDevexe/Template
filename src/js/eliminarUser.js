@@ -20,9 +20,9 @@ $(".tablas").on("click", ".btnEliminar", function () {
             console.log(result);
             if (result == "ok") {
               Swal.fire(
-                "The Internet?",
+                "Ok",
                 "El registro se elimino correctamente",
-                "question"
+                "success"
               ).then((result) => {
                 location.reload();
               });

@@ -13,9 +13,7 @@
 
     <!-- Custom fonts for this template-->
     <link href="./vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
@@ -39,31 +37,26 @@
                             <form class="user" method="post" id="frmDatos">
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control form-control-user" id="exampleFirstName"
-                                            placeholder="First Name" name="nombre">
+                                        <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="First Name" name="nombre">
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control form-control-user" id="exampleLastName"
-                                            placeholder="Last Name"name="apellido">
+                                        <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="Last Name" name="apellido">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail"
-                                        placeholder="Email Address"name="email">
+                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email Address" name="email">
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="password" class="form-control form-control-user"
-                                            id="exampleInputPassword" placeholder="Password" name="password">
+                                        <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password" name="password">
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="password" class="form-control form-control-user"
-                                            id="exampleRepeatPassword" placeholder="Repeat Password" autocomplete="new-password">
+                                        <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Repeat Password" autocomplete="new-password">
                                     </div>
                                 </div>
                                 <button href="login.php" class="btn btn-primary btn-user btn-block" type="submit">
                                     Register Account
-</button>                        </button>
+                                </button> </button>
                                 <hr>
                                 <a href="index.php" class="btn btn-google btn-user btn-block">
                                     <i class="fab fa-google fa-fw"></i> Register with Google
@@ -88,7 +81,8 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <!-- <script src="js/Usuario.js"></script>  -->
+    <!-- <script src="./js/Usuario.js"></script> -->
+
     <script src="./vendor/jquery/jquery.min.js"></script>
     <script src="./vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
@@ -98,7 +92,9 @@
 
     <!-- Custom scripts for all pages-->
     <script src="./js/sb-admin-2.min.js"></script>
-     <script src="./js/insertarUser.js"> </script>
+    <!-- <script src="./js/insertarUser.js"> </script>  -->
+
+    <script src="./js/Usuario.js"> </script>
 
 </body>
 

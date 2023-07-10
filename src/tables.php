@@ -1,12 +1,8 @@
 <?php include '../src/includes/header.php' ?>
-    <?php use Mysql\Aplicacion\clases\Usuario;
-    require "../vendor2/autoload.php";
-    require "../core/config.php";
-    $users = Usuario::mostrarUsuarios();
-    ?>
 
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0-alpha3/css/bootstrap.min.css"/>
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0-alpha3/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css" />
+
 <body id="page-top">
 
     <!-- Page Wrapper -->
@@ -322,16 +318,16 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-                <script src= "https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
-                <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
-                <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Tables</h1>
-                    <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
+                    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+                    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+                    <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-2 text-gray-800 ocultar">Tables</h1>
+                    <p class="mb-4 ocultar">DataTables is a third party plugin that is used to generate the demo table below.
                         For more information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.</p>
-
+      
                     <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
+                    <div class="card shadow mb-4 ocultar">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
                         </div>
@@ -356,47 +352,79 @@
                                             <th>Acción</th>
                                         </tr>
                                     </tfoot>
-                                    <tbody>
-                                        <?php
-                                        foreach ($users as $key => $user) {
-                                        ?>
-                                            <tr>
-                                                <td><?php echo $user["user_nombre"] ?></td>
-                                                <td><?php echo $user["user_apellido"] ?> </td>
-                                                <td><?php echo $user["user_email"] ?></td>
-                                                <td><?php echo $user["fecha"] ?></td>
-                                                <td>
-                                                <button class="btn btn-primary">Editar</button>
-                                                <button class="btn btn-secondary btnEliminar" idUsuario="<?php echo $user['id'] ?>">Eliminar</button>
-                                                </td>
-                                            </tr>
-                                        <?php } ?>
+                                    <tbody id="tblUsuarios">
+
+
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
-
-                </div>
-                <!-- /.container-fluid -->
-
-            </div>
-            <!-- End of Main Content -->
-
-            <script>$('#tablaUsuarios').DataTable();</script>
-            
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2020</span>
                     </div>
-                </div>
-            </footer>
-            <!-- End of Footer -->
+                
 
+
+                <!--Inicio formulario edicion-->
+                <div class="container">
+
+
+                    <form class="user" method="post" id="frmUsuario" style="display: none;">
+                            <input type="hidden" id="txtId">
+                        <div class="form-group row">
+                            <div class="col-sm-6 mb-3 mb-sm-0">
+                                <input type="text" class="form-control form-control-user" id="nombreUsuario" placeholder="First Name" name="nombreUsuario">
+                            </div>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control form-control-user" id="apellidoUsuario" placeholder="Last Name" name="apellidoUsuario">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control form-control-user" id="emailUsuario" placeholder="Email Address" name="emailUsuario">
+                        </div>
+
+                        <!-- <div class="form-group row">
+                            <div class="col-sm-6 mb-3 mb-sm-0">
+                                <input type="password" class="form-control form-control-user" id="password" placeholder="Password" name="password">
+                            </div>
+                            <div class="col-sm-6">
+                                <input type="password" class="form-control form-control-user" id="repassword" placeholder="Repeat Password" autocomplete="repassword">
+                            </div>
+                        </div> -->
+
+                        <button class="btn btn-primary btn-user btn-block"  type="submit">
+                            Actualizar Informacion
+                        </button> </button>
+                        <hr>
+
+                    </form>
+                </div>
+            </div>
         </div>
-        <!-- End of Content Wrapper -->
+    </div>
+    <!--Fin formulario edicion-->
+
+    </div>
+    <!-- /.container-fluid -->
+
+    </div>
+    <!-- End of Main Content -->
+
+    <script>
+        $('#tablaUsuarios').DataTable();
+    </script>
+
+    <!-- Footer -->
+    <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+                <span>Copyright &copy; Your Website 2020</span>
+            </div>
+        </div>
+    </footer>
+    <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
 
     </div>
     <!-- End of Page Wrapper -->
@@ -429,5 +457,5 @@
     <script src="js/demo/datatables-demo.js"></script>
     <script src="vendor/datatables/dataTables.bootstrap4.css"></script>
     <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="js/eliminarUser.js"></script> 
+    <script src="./js/Usuario.js?ex=48"> </script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>

@@ -21,33 +21,38 @@ function ingresarUsuario(e) {
   console.log(datos);
 
   $.ajax({
-    url: "ajax/insertarUser.php",
+    url: "ajax/UsuarioAjax.php?op=ingresarUsuario",
     type: "post",
     data: datos,
     success: function (result) {
-      console.log(result);
-      if (result != "ok" || result != "error") {
-        Swal.fire({
-          icon: "error",
-          title: "Error",
-          text: "Ya existe ese email",
-        });
-      }
-      if (result == "ok") {
+     let r = $.parseJSON(result);
+
+      if (r.status == 1) {
         Swal.fire({
           icon: "info",
           title: "Exito...",
-          text: "Se inserto el registro correctamente",
+          text: r.msg,
         });
+
+        
       }
 
-      if (result == "error") {
+      if (r.status == 0) {
         Swal.fire({
           icon: "error",
           title: "Error",
-          text: "No se inserto el email",
+          text: r.msg,
         });
       }
+
+      if (r.status == 2) {
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: r.msg,
+        });
+      }
+      
     },
   });
 }

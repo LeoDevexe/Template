@@ -5,6 +5,7 @@ function init() {
   $("#frmDatos").submit(ingresarUsuario);
   $("#frmUsuario").submit(editarUsuario);
   //$("#actualizarInfo").click(editarUsuario);
+  $("#btnCancelar").click(cancelarActualizacion);
 }
 
 function listar() {
@@ -145,6 +146,11 @@ function cargarDatosUsuario(idUsuario){
         $("#emailUsuario").val(r.email);
         
     });
+}
+
+
+function cancelarActualizacion(){
+    location.reload();
 }
 
 

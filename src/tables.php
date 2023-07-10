@@ -325,7 +325,7 @@
                     <h1 class="h3 mb-2 text-gray-800 ocultar">Tables</h1>
                     <p class="mb-4 ocultar">DataTables is a third party plugin that is used to generate the demo table below.
                         For more information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.</p>
-      
+
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4 ocultar">
                         <div class="card-header py-3">
@@ -360,8 +360,8 @@
                             </div>
                         </div>
                     </div>
-                    </div>
-                
+                </div>
+
 
 
                 <!--Inicio formulario edicion-->
@@ -369,7 +369,7 @@
 
 
                     <form class="user" method="post" id="frmUsuario" style="display: none;">
-                            <input type="hidden" id="txtId">
+                        <input type="hidden" id="txtId">
                         <div class="form-group row">
                             <div class="col-sm-6 mb-3 mb-sm-0">
                                 <input type="text" class="form-control form-control-user" id="nombreUsuario" placeholder="First Name" name="nombreUsuario">
@@ -391,9 +391,12 @@
                             </div>
                         </div> -->
 
-                        <button class="btn btn-primary btn-user btn-block"  type="submit">
-                            Actualizar Informacion
-                        </button> </button>
+                        <div class="d-flex justify-content-center gap-3">
+                            <button class="btn btn-primary btn-user btn-inline" type="submit">
+                                Actualizar Informacion
+                            </button>
+                            <button id="btnCancelar" class="btn btn-danger btn-user btn-inline">Cancelar</button>
+                        </div>
                         <hr>
 
                     </form>
@@ -457,5 +460,5 @@
     <script src="js/demo/datatables-demo.js"></script>
     <script src="vendor/datatables/dataTables.bootstrap4.css"></script>
     <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="./js/Usuario.js?ex=48"> </script>
+    <script src="./js/Usuario.js?ex=49"> </script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>

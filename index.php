@@ -1,4 +1,13 @@
-<?php require './core/config.php' ?>
+<?php require './core/config.php'; 
+session_start();
+if(isset($_SESSION['nombre']) && $SESSION !=""){
+
+
+}else{
+    echo '<script> location.href="src/login.php"</script>';
+}
+$usuario = $_SESSION['nombre'];
+?>
 <?php include './src/includes/header_index.php' ?>
 
 
@@ -378,3 +387,4 @@
             </div>
         </div>
         <?php include './src/includes/footer.php' ?>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

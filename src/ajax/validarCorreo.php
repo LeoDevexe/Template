@@ -10,3 +10,5 @@ if ($hayEmailRepetido) {
 } else {
     echo "no_existe";
 }
+
+?>

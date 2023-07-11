@@ -107,7 +107,7 @@ class Usuario
         $result = $link->query($sql);
 
         if ($result->num_rows > 0) {
-            return "existe";
+            return true;
         } else {
             return false;
         }

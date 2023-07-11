@@ -19,13 +19,12 @@ $('#frmDatos').submit(function(e) {
   }
 
   var datos = $(this).serialize();
-
-
   $.ajax({
     url: "ajax/validarCorreo.php",
     type: "post",
     data: datos,
     success: function(result) {
+      console.log(result);
       if (result == "existe") {
         Swal.fire({
           icon: 'error',
@@ -38,6 +37,7 @@ $('#frmDatos').submit(function(e) {
           type: "post",
           data: datos,
           success: function(result) {
+            console.log(result);
             if (result == "ok") {
               Swal.fire({
                 icon: 'info',
